@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slackers Preview</title>
+  <script src="https://npmcdn.com/preact@4.8.0"></script>
+  <script src="./standalone/slackers_error.js"></script>
+  <script src="./standalone/slackers_loader.js"></script>
+  <script src="./standalone/slackers_loader-gears.js"></script>
+  <script src="./standalone/slackers_maintenance.js"></script>
+  <script src="./standalone/slackers_not-found.js"></script>
+  <script src="./standalone/slackers_unauthorized.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<script>
+  (function () {
+    var root = document.getElementById('app');
+    var list = [];
+    var currentIndex = Infinity;
+
+    // absurd loop to extract components
+    for (var slacker in window) {
+      if (slacker.indexOf('slackers_') === 0) {
+        list.push(window[slacker]);
+      }
+    }
+
+    setInterval(renderNext, 3000);
+    renderNext();
+
+    function renderNext() {
+      currentIndex = ++currentIndex > list.length - 1 ? 0 : currentIndex;
+      var Component = list[currentIndex];
+      preact.render(preact.h(Component), root, root && root.firstChild);
+    }
+  }());
+</script>
+</body>
+</html>

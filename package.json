@@ -1,0 +1,27 @@
+{
+  "name": "slackers",
+  "description": "Simple 'end of the road' pages with good modern vibe",
+  "version": "0.1.0",
+  "scripts": {
+    "transpile": "babel ./src ./build --out-dir ${OUT_DIR:-./} --presets es2015,react --plugins babel-plugin-add-module-exports",
+    "standalone": "OUT_DIR=./build npm run transpile && webpack --bail -p --progress",
+    "generate-icons": "node tools/generate-icons && npm run transpile",
+    "clean": "node tools/rm build",
+    "compile": "npm run generate-icons && npm run standalone && npm run clean",
+    "prepublish": "npm run compile"
+  },
+  "main": "base.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrbar42/slackers.git"
+  },
+  "keywords": [
+    "slackers",
+    "not found",
+    "error",
+    "page",
+    "pages"
+  ],
+  "author": "mrbar42",
+  "license": "WTFPL"
+}

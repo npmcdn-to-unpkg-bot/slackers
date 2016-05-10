@@ -1,0 +1,19 @@
+'use strict';
+
+import {h, Component} from 'preact';
+import Base from './base';
+
+class Slacker extends Component {
+  render({text}) {
+    return h(Base, {
+      text: text || "%TEXT%",
+      backgroundImage: icon()
+    })
+  }
+}
+
+export default Slacker;
+
+function icon() {
+  return "%IMAGE_BASE64%"
+}
