@@ -8,7 +8,8 @@
     "generate-icons": "node tools/generate-icons && npm run transpile",
     "clean": "node tools/rm build",
     "compile": "npm run generate-icons && npm run standalone && npm run clean",
-    "prepublish": "npm run compile"
+    "prepublish": "npm run compile",
+    "test": "echo 'No tests were defined'"
   },
   "main": "base.js",
   "repository": {

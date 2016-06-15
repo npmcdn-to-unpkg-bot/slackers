@@ -7,6 +7,16 @@ The pages are valid components for [preact](https://github.com/developit/preact)
 
 there is also a [demo](https://mrbar42.github.io/slackers).
 
+#### What is it good for? 
+
+well, you can use them for any purpose really.
+I use them as placeholders for dark corners of my SPA where in normal
+case you should never get to but its in-fact possible.
+For example:
+
+when using react-router or so.. a catch all page ('\*') can take `not-found`.
+
+Or when an evil user navigates manually to authenticated user area only (`unauthorized`)
 
 ### Usage
 
