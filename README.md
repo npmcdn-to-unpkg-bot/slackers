@@ -51,7 +51,7 @@ Change icon:
 
 As standalone script (not recommended)
 
-    <script src="https://npmcdn.com/slackers/standalone/slackers_not-found.js"></script>
+    <script src="https://unpkg.com/slackers/standalone/slackers_not-found.js"></script>
     <script>
       var NotFound = window['slackers_not-found'];
     </script>
